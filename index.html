@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Photo Feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-light bg-light px-3 justify-content-between">
+    <a class="navbar-brand" href="#">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <div class="d-flex align-items-center gap-2">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPostModal">
+        Create a new post
+      </button>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          <i class="fas fa-cog"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Accessibility</a></li>
+          <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createPostLabel">Create a new post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="caption" class="form-label">Caption:</label>
+              <textarea class="form-control" id="caption" rows="3" placeholder="Add the caption of your post here"></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-outline-secondary"><i class="fas fa-camera"></i></button>
+              <button type="button" class="btn btn-outline-secondary"><i class="fas fa-location-dot"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Publish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="container mt-4">
+    <ul class="nav nav-tabs justify-content-center" id="feedTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid" type="button" role="tab">
+          <i class="fas fa-th"></i> Grid View
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab">
+          <i class="fas fa-bars"></i> List View
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content pt-3" id="feedTabsContent">
+      <!-- GRID VIEW -->
+      <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1584395630827-860eee694d7b" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cristiano_Ronaldo_2018.jpg/640px-Cristiano_Ronaldo_2018.jpg" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+          <div class="col">
+            <div class="ratio ratio-1x1">
+              <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" class="img-fluid rounded object-fit-cover w-100 h-100">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIST VIEW -->
+      <div class="tab-pane fade" id="list" role="tabpanel" aria-labelledby="list-tab">
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>My Crazy dog Spark!</span>
+            <span class="text-muted">08/26</span>
+          </div>
+          <img src="https://images.dog.ceo/breeds/beagle/n02088364_11136.jpg" class="card-img-top" alt="Dog photo">
+          <div class="card-body">
+            <p class="card-text"><strong>204 Likes</strong></p>
+            <p class="card-text">This is an example of a very good photo that you can post on Instagram</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Golden Fields</span>
+            <span class="text-muted">08/15</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" class="card-img-top" alt="Man in field">
+          <div class="card-body">
+            <p class="card-text"><strong>1102 Likes</strong></p>
+            <p class="card-text">Nature and solitude.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Perfect Angle</span>
+            <span class="text-muted">07/30</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top" alt="Architecture">
+          <div class="card-body">
+            <p class="card-text"><strong>759 Likes</strong></p>
+            <p class="card-text">Loved this perspective!</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Portrait Smiles</span>
+            <span class="text-muted">08/03</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" class="card-img-top" alt="Smiling woman">
+          <div class="card-body">
+            <p class="card-text"><strong>990 Likes</strong></p>
+            <p class="card-text">Genuine joy is contagious!</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Ocean City View</span>
+            <span class="text-muted">08/01</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1584395630827-860eee694d7b" class="card-img-top" alt="Coastline">
+          <div class="card-body">
+            <p class="card-text"><strong>4200 Likes</strong></p>
+            <p class="card-text">One of the most beautiful coasts I've seen.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>CR7 Power Shot</span>
+            <span class="text-muted">07/28</span>
+          </div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Cristiano_Ronaldo_2018.jpg/640px-Cristiano_Ronaldo_2018.jpg" class="card-img-top" alt="Cristiano Ronaldo">
+          <div class="card-body">
+            <p class="card-text"><strong>32100 Likes</strong></p>
+            <p class="card-text">Legend. Enough said.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Daily Vibes</span>
+            <span class="text-muted">08/09</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf" class="card-img-top" alt="Man working">
+          <div class="card-body">
+            <p class="card-text"><strong>785 Likes</strong></p>
+            <p class="card-text">Focus mode activated.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Cat Nap</span>
+            <span class="text-muted">08/06</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24" class="card-img-top" alt="Cat">
+          <div class="card-body">
+            <p class="card-text"><strong>1873 Likes</strong></p>
+            <p class="card-text">Our favorite couch spot.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header d-flex justify-content-between">
+            <span>Morning Brew</span>
+            <span class="text-muted">08/11</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" class="card-img-top" alt="Coffee">
+          <div class="card-body">
+            <p class="card-text"><strong>1012 Likes</strong></p>
+            <p class="card-text">The smell of fresh coffee and calm mornings ☕</p>
+          </div>
+        </div>
+        <!-- Aquí se insertan los mismos 9 posts en formato card como ya fueron definidos -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
